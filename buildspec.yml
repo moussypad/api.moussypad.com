@@ -9,6 +9,6 @@ phases:
   build:
     commands:
       - yarn build
-  artifacts:
+artifacts:
     files:
       - './dist/**/*'
