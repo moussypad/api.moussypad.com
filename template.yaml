@@ -9,4 +9,18 @@ Resources:
       Handler: index.handler
       Runtime: nodejs6.10
       CodeUri: ./dist
-      Role: arn:aws:iam::146676994108:role/moussypad-api-lambda-service-role
+      Role: !Ref LambdaTrustRole
+  LambdaTrustRole:
+    Type: AWS::IAM::Role
+    RoleName: moussypad-api-lambda-service-role
+    AssumeRolePolicyDocument:
+      Statement:
+      - Effect: Allow
+        Principal:
+          Service: [lambda.amazonaws.com]
+        Action: sts:AssumeRole
+    Path: /
+  LambdaRolePolicy:
+    DependsOn: LambdaTrustRole
+    Properties:
+      PolicyName: AWSLambdaBasicExecutionRole
