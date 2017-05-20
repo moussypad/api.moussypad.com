@@ -1,4 +1,7 @@
 version: 0.2
+env:
+  variables:
+    S3_BUCKET: ""
 phases:
   install:
     commands:
@@ -11,7 +14,7 @@ phases:
       - yarn build
   post_build:
     commands:
-      - aws cloudformation package --template template.yaml --s3-bucket "" --output-template post-template.yaml
+      - aws cloudformation package --template template.yaml --s3-bucket $S3_BUCKET --output-template post-template.yaml
 artifacts:
   files:
     - post-template.yaml
