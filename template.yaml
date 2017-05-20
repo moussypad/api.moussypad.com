@@ -9,4 +9,4 @@ Resources:
       Handler: index.handler
       Runtime: nodejs6.10
       CodeUri: ./dist
-      Role: moussypad-api-lambda-role
+      Role: arn:aws:iam::146676994108:role/moussypad-api-lambda-service-role
