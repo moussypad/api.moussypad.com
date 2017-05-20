@@ -12,14 +12,15 @@ Resources:
       Role: !Ref LambdaTrustRole
   LambdaTrustRole:
     Type: AWS::IAM::Role
-    RoleName: moussypad-api-lambda-service-role
-    AssumeRolePolicyDocument:
-      Statement:
-      - Effect: Allow
-        Principal:
-          Service: [lambda.amazonaws.com]
-        Action: sts:AssumeRole
-    Path: /
+    Properties:
+      RoleName: moussypad-api-lambda-service-role
+      AssumeRolePolicyDocument:
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: [lambda.amazonaws.com]
+          Action: sts:AssumeRole
+      Path: /
   LambdaRolePolicy:
     Type: AWS::IAM::Policy
     DependsOn: LambdaTrustRole
