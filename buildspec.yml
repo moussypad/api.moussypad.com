@@ -11,7 +11,7 @@ phases:
       - yarn build
   post_build:
     commands:
-      - aws cloudformation package --template template.yaml --output-template post-template.yaml
+      - aws cloudformation package --template template.yaml --s3-bucket --output-template post-template.yaml
 artifacts:
   files:
     - post-template.yaml
