@@ -1,10 +1,13 @@
 AWSTemplateFormatVersion : '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: A hello world application.
+Description: Mossypad api.
 Resources:
-  HelloWorldFunction:
+  ApiFunction:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: moussypad-api
       Handler: index.handler
       Runtime: nodejs6.10
       CodeUri: ./dist
+      Role: moussypad-api-lambda-role
+      Policies: AWSLambdaBasicExecutionRole
