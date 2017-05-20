@@ -10,4 +10,4 @@ Resources:
       Runtime: nodejs6.10
       CodeUri: ./dist
       Role: moussypad-api-lambda-role
-      Policies: AWSLambdaBasicExecutionRole
+      Policies: arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
