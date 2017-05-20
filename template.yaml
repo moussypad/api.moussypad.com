@@ -21,6 +21,7 @@ Resources:
         Action: sts:AssumeRole
     Path: /
   LambdaRolePolicy:
+    Type: AWS::IAM::Policy
     DependsOn: LambdaTrustRole
     Properties:
       PolicyName: AWSLambdaBasicExecutionRole
